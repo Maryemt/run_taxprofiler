@@ -2,31 +2,30 @@
 
 Help()
 {
-  
-   echo "This project is a automation script for running the pipeline nf-core/taxprofiler. "
+   echo "This project is an automation script to run the pipeline nf-core/taxprofiler pipeline "
    echo
    echo "Usage : bash nf-core/taxprofiler.sh " directory/ TOOL1[TOOL1,TOOL2..]
    echo   
 }
+
+# Get arguments 
 directory=$1
 tools=$2
 
 ls -v $directory*.fastq.gz > datas_file
 
-#Samplesheet Creation
-
+# samplesheet.csv creation
 python3 ./scripts/Samplesheet_generator.py -i datas_file -o samplesheet.csv -t 'I'
 
-#Database Creation
-
+# database file creation
 python3 ./scripts/databases_generator.py -t $tools -d database.csv  
 tc=$(cat pip.txt)
 
-#Running the pipeline
+# Run the pipeline
+#./nextflow run nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume
+nextflow run  nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume
 
-./nextflow run nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume
-#or nextflow run  nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume
-
+# Data management
 rm -f pip.txt
 rm -f datas_file
 
@@ -40,5 +39,3 @@ while getopts ":h" option; do
          exit;;
    esac
 done
-
-
