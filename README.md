@@ -36,9 +36,13 @@ The resulting files of those two scripts : *samplesheet.csv* & *database.csv* wi
 ```
 ./run_taxprofiler.sh  data_directory/ <TOOL1>,<TOOL2>
 ```
+data_directory is the path to the file containing your fastq files 
+<TOOL1>,<TOOL2>... are the profilers you want to use during the analysis
+
+
 Example :
 ```
-./run_taxprofiler.sh  data/ Centrifuge,Motus,Kaiju
+./run_taxprofiler.sh  data/ centrifuge,Motus,Kaiju
 ```
 
 If you want to generate the samplesheet separately, you need a file containing all your samples :
