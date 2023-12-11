@@ -36,8 +36,9 @@ The resulting files of those two scripts : *samplesheet.csv* & *database.csv* wi
 ```
 ./run_taxprofiler.sh  data_directory/ <TOOL1>,<TOOL2>
 ```
+
 data_directory is the path to the file containing your fastq files 
-<TOOL1>,<TOOL2>... are the profilers you want to use during the analysis
+TOOL1,TOOL2... are the profilers you want to use during the analysis
 
 
 Example :
