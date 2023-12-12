@@ -67,7 +67,7 @@ Where
 
 *Example* :
 ```
-./run_taxprofiler.sh  data/ centrifuge,Motus,Kaiju
+./run_taxprofiler.sh  data/ centrifuge,kraken2
 ```
  
 
