@@ -59,9 +59,9 @@ Execute the pipeline
 ```
 ./run_taxprofiler.sh  data_directory/ <TOOL1>,<TOOL2>
 ```
-
-**data_directory** is the path to the file containing your fastq files 
-**TOOL1,TOOL2...*** is the list of the profilers you want to use during the analysis
+Where 
+* **data_directory** is the path to the file containing your fastq files 
+**TOOL1,TOOL2...** is the list of the profilers you want to use during the analysis *
 
 
 *Example* :
