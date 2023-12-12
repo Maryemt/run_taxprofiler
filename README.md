@@ -5,7 +5,7 @@
 
 ## Automation script for running the pipeline nf-core/taxprofiler
 
-[nf-core/taxprofiler](https://github.com/nf-core/taxprofiler) is a bioinformatics best-practice analysis pipeline for taxonomic classification and profiling of shotgun metagenomic data. 
+**[nf-core/taxprofiler](https://github.com/nf-core/taxprofiler)** is a bioinformatics best-practice analysis pipeline for taxonomic classification and profiling of shotgun metagenomic data. 
 
 It allows for in-parallel taxonomic identification of reads or taxonomic abundance estimation with multiple classification and profiling tools against multiple databases, produces standardised output tables.
 
@@ -13,17 +13,28 @@ Find more information here: https://nf-co.re/taxprofiler/1.1.2
 
 This project is a automation script to create the input files needed to run the pipeline nf-core/taxprofiler. 
 
-- The folder **scripts** is the folder containing the python scripts:
-  - Samplesheet_generator.py
-  - Database_generator.py
-- The file **run_taxprofiler.sh** allows the execution of the python files and the nf-core/taxprofiler pipeline
 
 ## Description
+The project contains two files:
+- The main script **run_taxprofiler.sh** allows the execution of the python files and the nf-core/taxprofiler pipeline
+- The folder **scripts** containing the following python scripts:
+  - Samplesheet_generator.py : to generate the samplesheet
+  - Database_generator.py : to generate the database file
 
-The main script takes two positionnal arguments:
 
-- The first one is the path to the directory containing the samples you want to analyze
-- the second argument is the chain of the profiling tools you want to use (Kraken2,Bracken,KrakenUniq,MetaPhlan3,Malt,DIAMOND,Centrifuge,Kaiju,mOTUs).
+The main script run_taxprofiler.sh takes two positionnal arguments:
+
+- The path to the directory containing your fastq files
+- The profiling tools you want to use for the analysis. Here are the options:
+  - Kraken2,
+  - Bracken, KrakenUniq,
+  - MetaPhlan3,
+  - Malt,
+  - DIAMOND,
+  - Centrifuge,
+  - Kaiju &
+  - mOTUs
+  depending on what you are analyzing. 
 
 It's allow the generation of the main samplesheet(Samplesheet_generator.py) and the database samplesheet from the profilers chain (database_generator.py)
 
