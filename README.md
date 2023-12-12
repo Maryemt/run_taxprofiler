@@ -19,7 +19,7 @@ The project contains two files:
 - The main script **run_taxprofiler.sh** allows the execution of the python files and the nf-core/taxprofiler pipeline
 - The folder **scripts** containing the following python scripts:
   - Samplesheet_generator.py : to generate the samplesheet
-  - Database_generator.py : to generate the database file
+  - Database_generator.py : to generate the database samplesheet
 
 
 The main script run_taxprofiler.sh takes two positionnal arguments:
@@ -36,26 +36,34 @@ The main script run_taxprofiler.sh takes two positionnal arguments:
   - mOTUs
   depending on what you are analyzing. 
 
-It's allow the generation of the main samplesheet(Samplesheet_generator.py) and the database samplesheet from the profilers chain (database_generator.py)
-
-- The first python script take as arguments a list of samples, the NGS type (*ILLUMINA* or *NANOPORE*) and returns the main samplesheet. 
-- The second one takes profiling tools chain as argument and return the database samplesheet.
-  
-The resulting files of those two scripts : *samplesheet.csv* & *database.csv* will be used as input for the pipeline.
+Samplesheet_generator.py takes the list of samples, the sequencing technology (*ILLUMINA* or *NANOPORE*) and returns a samplesheet: *samplesheet.csv* 
+Database_generator.py takes a chain of profiling tools as argument and return the database samplesheet: *database.csv*
 
 ![image](https://github.com/KhoujSunshine/run_nf-core-taxprofiler/assets/100375394/ff128eff-1eac-4cf8-accb-45666fea6b45)
 
+
 ## Usage
 
+Pull the repository
+```
+git pull https://github.com/Maryemt/run_taxprofiler.git
+```
+Once it is done 
+```
+chmod +x run_taxprofiler.sh scripts/*
+```
+
+
+Execute the pipeline
 ```
 ./run_taxprofiler.sh  data_directory/ <TOOL1>,<TOOL2>
 ```
 
-data_directory is the path to the file containing your fastq files 
-TOOL1,TOOL2... are the profilers you want to use during the analysis
+**data_directory** is the path to the file containing your fastq files 
+**TOOL1,TOOL2...*** is the list of the profilers you want to use during the analysis
 
 
-Example :
+*Example* :
 ```
 ./run_taxprofiler.sh  data/ centrifuge,Motus,Kaiju
 ```
