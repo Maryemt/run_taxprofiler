@@ -37,6 +37,7 @@ The main script run_taxprofiler.sh takes two positionnal arguments:
   depending on what you are analyzing. 
 
 Samplesheet_generator.py takes the list of samples, the sequencing technology (*ILLUMINA* or *NANOPORE*) and returns a samplesheet: *samplesheet.csv* 
+
 Database_generator.py takes a chain of profiling tools as argument and return the database samplesheet: *database.csv*
 
 ![image](https://github.com/KhoujSunshine/run_nf-core-taxprofiler/assets/100375394/ff128eff-1eac-4cf8-accb-45666fea6b45)
