@@ -15,9 +15,11 @@ tools=$2
 ls -v $directory*.fastq.gz > datas_file
 
 # samplesheet.csv creation
+echo "Generating samplesheet.csv..."
 python3 ./scripts/Samplesheet_generator.py -i datas_file -o samplesheet.csv -t 'I'
 
 # database file creation
+echo "Generating database.csv..."
 python3 ./scripts/databases_generator.py -t $tools -d database.csv  
 tc=$(cat pip.txt)
 
