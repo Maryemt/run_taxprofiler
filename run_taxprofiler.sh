@@ -21,9 +21,6 @@ python3 ./scripts/Samplesheet_generator.py -i datas_file -o samplesheet.csv -t '
 python3 ./scripts/databases_generator.py -t $tools -d database.csv  
 tc=$(cat pip.txt)
 
-# File management 
-mkdir krona
-
 # Run the pipeline
 #./nextflow run nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume
 
