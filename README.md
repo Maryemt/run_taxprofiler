@@ -69,27 +69,6 @@ Where
 ```
 ./run_taxprofiler.sh  data/ centrifuge,Motus,Kaiju
 ```
-
-If you want to generate the samplesheet separately, you need a file containing all your samples :
-
-data.txt
-
-<p align="center">
-   <img width="658" alt="image" src="https://github.com/KhoujSunshine/run_nf-core-taxprofiler/assets/100375394/2847aaeb-320d-412f-8f95-d5d78bf29de5">
-</p>
-
-```
-./scripts/Samplesheet_generator.py -i data_file.txt -o samplesheet.csv -t ['I'/'N']
-```
-example :
-```
-./scripts/Samplesheet_generator.py -i data.txt -o samplesheet.csv -t 'I'
-```
- will return the samplesheet :
- 
- <p align="center">
-<img width="667" alt="image" src="https://github.com/KhoujSunshine/run_nf-core-taxprofiler/assets/100375394/926c0cd8-676a-4c24-8e3b-28867a39a2b0">
- </p>
  
 
 ## Contact
