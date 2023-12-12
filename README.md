@@ -42,7 +42,8 @@ Database_generator.py takes a chain of profiling tools as argument and return th
 
 ![image](https://github.com/KhoujSunshine/run_nf-core-taxprofiler/assets/100375394/ff128eff-1eac-4cf8-accb-45666fea6b45)
 
-
+![image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Ftaxprofiler&psig=AOvVaw1lEt2C-K-tU9vNudwQtQen&ust=1702462522602000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMie-KzViYMDFQAAAAAdAAAAABAc)
+ 
 ## Usage
 
 Pull the repository
@@ -60,8 +61,8 @@ Execute the pipeline
 ./run_taxprofiler.sh  data_directory/ <TOOL1>,<TOOL2>
 ```
 Where 
-* **data_directory** is the path to the file containing your fastq files 
-**TOOL1,TOOL2...** is the list of the profilers you want to use during the analysis *
+* **data_directory** is the path to the file containing your fastq files
+* **TOOL1,TOOL2...** is the list of the profilers you want to use during the analysis
 
 
 *Example* :
