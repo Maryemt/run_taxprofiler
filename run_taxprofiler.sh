@@ -11,6 +11,7 @@ Help()
 # Get arguments 
 directory=$1
 tools=$2
+host_ref=$3
 
 ls -v $directory*.fastq.gz > datas_file
 
@@ -29,7 +30,14 @@ tc=$(cat pip.txt)
 # add host removal option 
 # would need to specify the host: here human
 # activate krona reporting 
-nextflow run  nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume --run_krona --perform_shortread_hostremoval --hostremoval_reference 
+echo "===============
+Running nf-core/taxprofiler with the following options:
+repository containing fastq files: $directory
+profilers selected : $tools
+host reference: $host_ref
+==============="
+
+nextflow run  nf-core/taxprofiler --input samplesheet.csv --databases database.csv --outdir ./ -profile docker $tc-resume --run_krona --perform_shortread_hostremoval --hostremoval_reference $host_ref
 
 # Data management
 rm -f pip.txt
