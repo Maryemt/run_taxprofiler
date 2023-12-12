@@ -6,9 +6,9 @@
 ## Automation script for running the pipeline nf-core/taxprofiler
 
 [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler) is a bioinformatics best-practice analysis pipeline for taxonomic classification and profiling of shotgun metagenomic data. It allows for in-parallel taxonomic identification of reads or taxonomic abundance estimation with multiple classification and profiling tools against multiple databases, produces standardised output tables.
+Find more information here: https://nf-co.re/taxprofiler/1.1.2
 
-
-This project is a automation script for creating the input needed to run the pipeline nf-core/taxprofiler. 
+This project is a automation script to create the input files needed to run the pipeline nf-core/taxprofiler. 
 
 - The folder **scripts** is the folder containing the python scripts:
   - Samplesheet_generator.py
