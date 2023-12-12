@@ -52,7 +52,7 @@ if __name__ == "__main__":
                 dbs.write('malt,'+'malt'+str(id_db)+','+'-id '+str(id_db)+','+input('<path>/<to>/malt/testdb-malt/ : '))
 
             elif tool == 'diamond' or 'kaiju':
-                dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('<path>/<to>/tool/ : ')+'\n')
+                dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('<path>/<to>/teool/ : ')+'\n')
             elif tool == 'centrifuge':
                 dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('/<path>/<to>/centrifuge/minigut_cf.tar.gz : ')+'\n')
             elif tool == 'krakenuniq':
@@ -62,7 +62,7 @@ if __name__ == "__main__":
             elif tool == 'metaphlan3':
                 dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('/<path>/<to>/metaphlan3/metaphlan_database/' )+'\n') 
             else :
-                raise Exception('The tool you gave is not supported by the pipeline. please check the documentation ! ')
+                raise Exception('The tool you gave is not supported by the pipeline. Please check the documentation ! ')
     with open('pip.txt','w') as pip:
         pip.write(pipeline)
         
