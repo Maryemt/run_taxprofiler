@@ -52,7 +52,7 @@ if __name__ == "__main__":
                 dbs.write('malt,'+'malt'+str(id_db)+','+'-id '+str(id_db)+','+input('<path>/<to>/malt/testdb-malt/ : '))
 
             elif tool == 'diamond' or 'kaiju':
-                dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('<path>/<to>/teool/ : ')+'\n')
+                dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('<path>/<to>/tool/ : ')+'\n')
             elif tool == 'centrifuge':
                 dbs.write(tool.lower()+','+input('database_name: ')+',,'+input('/<path>/<to>/centrifuge/minigut_cf.tar.gz : ')+'\n')
             elif tool == 'krakenuniq':
