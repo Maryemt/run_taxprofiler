@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
 	#Arguments parser
 	parser=argparse.ArgumentParser(
-		description='''This program generate the main samplesheet  for \
+		description='''This program generate the main samplesheet for \
 						the pipeline nf-core/taxprofiler \
 		\n Take a look''',
 		epilog=""" Have fun ! ^_^ """, usage="%(prog)s [-i filename] [-o samplesheet.csv] [-t 'I']")
@@ -50,10 +50,10 @@ if __name__ == "__main__":
 
 	args=parser.parse_args()
 
-	#Short reads case
+	# Short reads case
 	if args.type== 'I':
 		type_s=',ILLUMINA'
-	#Long reads	case
+	# Long reads case
 	elif args.type== 'N':
 		type_s=',OXFORD_NANOPORE'
 
@@ -76,7 +76,7 @@ if __name__ == "__main__":
 			#List of the single end files
 			single_end=list(set(all_datas)-set(already_used))	
 
-		#Writing the Single End files on the samplesheet
+		# Writing the Single End files on the samplesheet
 		i=1
 		for element in single_end:
 			samplesheet.write((str(i)+',')+'run'+str(i)+type_s+','+'./'+element+','+','+'\n')
