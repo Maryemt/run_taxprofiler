@@ -25,6 +25,22 @@ echo "--- Generating samplesheet.csv..."
 ls -v $directory*.fastq.gz > list_file
 python3 ./scripts/Samplesheet_generator.py -i list_file -o samplesheet.csv -t 'I'
 
+### Name Management : get sample names and run accessions
+cd $directory
+# create run_accession column
+ls *R1* | sed 's/_L001_R1_001.fastq.gz//' > run_accession
+sed -i '1i run_accession' run_accession # add row name to samples
+# create sample names 
+ls *R1* | sed 's/_L001_R1_001.fastq.gz//' | awk '{sub(".*_","",$1)}1' > sample_name
+sed -i '1i sample' sample_name # add row name to sample_name 
+paste -d',' sample_name run_accession > new_cols
+mv new_cols ../
+rm sample_name run_accession
+# insert columns, remove old ones
+paste -d',' new_cols samplesheet.csv | cut --complement -d',' -f3-4 > new_samplesheet.csv
+rm samplesheet.csv
+mv new_samplesheet.csv samplesheet.csv
+#####
 
 # database file creation
 echo "--- Generating database.csv..."
